@@ -1,6 +1,4 @@
 class FoodsController < ApplicationController
-  load_and_authorize_resource
-
   def index
     @foods = Food.all
   end
@@ -11,10 +9,11 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
-    @food.author = current_user
+    @food.user = current_user
     if @food.save
-      redirect_to user_foods_path(current_user), notice: 'Food was created successfully'
+      redirect_to foods_path, notice: 'Food was created successfully'
     else
+      redirect_to new_food_path
       render :new, alert: 'Error: Food not saved'
     end
   end
