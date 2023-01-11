@@ -12,15 +12,14 @@
     </thead>
     <tbody>
     <% @foods.includes(:user).each do |food| %>
-        <tr id="<%= food %>">
+        <tr>
           <td><%= food.name%></td>
           <td><%= food.measurement_unit%></td>
           <td>$<%= food.price%></td>
           <td><%= food.quantity%></td>
           
           <td>
-              <%= button_to "Delete", food_path(food.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn delete-btn" %>
-          
+              <%= button_to "Delete", food_path(food.id), method: :delete%>
           </td>
         </tr> 
   <% end %>
