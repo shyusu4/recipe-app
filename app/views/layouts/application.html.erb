@@ -11,6 +11,14 @@
   </head>
 
   <body>
+  <header>
+  <%= link_to "Recipe App", root_path %>
+    <nav>
+      <%= link_to "Foods", root_path %>
+      <%= link_to "Recipes", recipes_path(current_user) %>
+    </nav>
+</header>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     

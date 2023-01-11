@@ -1,10 +1,22 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @recipe %>
-
 <div>
-  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
-  <%= link_to "Back to recipes", recipes_path %>
-
-  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+<table>
+<thead>
+<tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Value</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @recipes.each do |recipe| %>
+        <tr>
+          <td><%= food.name%></td>
+          <td><%= food.quantity%></td>
+          <td>
+              <%= button_to "Delete", food_path(food.id), method: :delete%>
+          </td>
+        </tr>
+      </tbody>
+</table>
 </div>
