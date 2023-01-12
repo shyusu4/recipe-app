@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = current_user.recipes
+    @recipes = Recipe.all
   end
 
   def show
@@ -12,13 +12,7 @@ class RecipesController < ApplicationController
   end
 
   def update_public
-    @recipe = Recipe.find(params[:id])
-    flash[:notice] = if recipe.update(public: !recipe.public)
-                       "Successfully updated to #{recipe.public ? 'Public' : 'Private'}."
-                     else
-                       'Failed to update recipe.'
-                     end
-    redirect_to "/users/#{current_user.id}/recipes/#{recipe.id}"
+    @public_recipes = Recipe.where(public: true).order(created_at: :desc)
   end
 
   def create

@@ -9,7 +9,7 @@
 <% if !current_user.nil? && current_user.id == @recipe.user_id %>
 		<div>
 			<%= link_to "Generate Shopping List"%>
-			<%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe.id)%>
+			<%= link_to "Add Ingredient", new_recipe_recipe_food_path(recipe_id: @recipe.id)%>
 		</div>
 	<% end %>
 
@@ -28,7 +28,7 @@
       </thead>
       <tbody>
 
-        <% RecipeFood.all.each do |recipe_food| %>
+        <% RecipeFood.where(recipe_id: params[:id]).each do |recipe_food| %>
 					<tr>
 					<td>
 						<%= recipe_food.food.name %>
@@ -37,13 +37,10 @@
 						<%= recipe_food.food.measurement_unit %>
 					</td>
 						<td>
-								<%= recipe_food.quantity %>
+								<%= recipe_food.food.quantity %>
 						</td>
 							<td>
 								$<%= recipe_food.food.price %>
-						</td>
-						<td>
-								$<%= recipe_food.quantity.to_i * recipe_food.food.price.to_i %>
 						</td>
 						<% if !current_user.nil? && current_user.id == @recipe.user_id %>
 							<td>

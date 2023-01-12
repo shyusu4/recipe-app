@@ -13,7 +13,6 @@ class FoodsController < ApplicationController
     if @food.save
       redirect_to foods_path, notice: 'Food was created successfully'
     else
-      redirect_to new_food_path
       render :new, alert: 'Error: Food not saved'
     end
   end
