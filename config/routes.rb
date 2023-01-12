@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 
   # Creating the routes for the recipes controller.
   resources :recipes, only: [:index, :show, :new, :create, :destroy] do
-    resources :recipe_foods
+    resources :recipe_foods, only: [:new, :create, :destroy]
   end
 end
