@@ -5,23 +5,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body>
-  <header>
-  <%= link_to "Recipe App", root_path %>
-    <nav>
-      <%= link_to "Foods", root_path %>
-      <%= link_to "Recipes", recipes_path(current_user) %>
-      <%= link_to "Public Recipes", public_recipes_path %>
-    </nav>
-</header>
-
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <%= render "layouts/navbar" %>
     
     <%= yield %>
   </body>
