@@ -1,0 +1,14 @@
+<h1>Public Recipes</h1>
+<% @recipes.each do |recipe| %>
+    <div>
+      <div>
+        <h4><%= recipe.name %></h4>
+        <p>
+          <%= recipe.description %>
+        </p>
+      </div>
+      <div>
+        <%= link_to "Show Recipe", recipe%>
+      </div>
+    </div>
+<% end %>
