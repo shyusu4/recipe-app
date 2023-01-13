@@ -11,10 +11,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
-  def update_public
-    @public_recipes = Recipe.where(public: true).order(created_at: :desc)
-  end
-
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
