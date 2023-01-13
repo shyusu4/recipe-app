@@ -1,49 +1,48 @@
 <div>
 <div class="recipe">
-<h2><%= @recipe.name %></h2>
-<div>Preparation time: <%= @recipe.preparation_time %></div>
-<div>Cooking time: <%= @recipe.cooking_time %></div>
-<div>Description: <%= @recipe.description %></div>
+<h2  class="text-center text-2xl font-bold mb-8"><%= @recipe.name %></h2>
+<div class="px-5"><span class="font-bold">Preparation time: </span><%= @recipe.preparation_time %></div>
+<div class="px-5"><span class="font-bold">Cooking time: </span><%= @recipe.cooking_time %></div>
+<div class="px-5"><span class="font-bold">Description: </span><%= @recipe.description %></div>
 </div>
 
 <% if !current_user.nil? && current_user.id == @recipe.user_id %>
-		<div>
-			<%= link_to "Generate shopping list", general_shopping_list_index_path(recipe_id: @recipe.id)%>
-			<%= link_to "Add Ingredient", new_recipe_recipe_food_path(recipe_id: @recipe.id)%>
+		<div class="px-5 py-5">
+		<span  class="text-sm bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-2">
+			<%= link_to "Generate shopping list", general_shopping_list_index_path(recipe_id: @recipe.id)%></span>
+			<span  class="text-sm bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-2"><%= link_to "Add Ingredient", new_recipe_recipe_food_path(recipe_id: @recipe.id)%></span>
 		</div>
 	<% end %>
 
-    <table>
-      <thead>
+    <table  class="w-80 text-sm text-left text-gray-500 dark:text-gray-400 mx-5">
+      <thead  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
-          <th> Food </th>
-          <th> Unit </th>
-          <th> Quantity </th>
-					<th> Unit Price </th>
-          <th=> Total Price </th>
-					<% if !current_user.nil? && current_user.id == @recipe.user_id %>
-          	<th> Action </th>
-					<% end %>
+          <th scope="col" class="px-6 py-3"> Food </th>
+          <th  scope="col" class="px-6 py-3"> Quantity </th>
+		  <th  scope="col" class="px-6 py-3"> Unit </th>
+          <th  scope="col" class="px-6 py-3"> Value </th>
+          	<th scope="col" class="px-6 py-3"> Action </th>
         </tr>
       </thead>
       <tbody>
 
         <% RecipeFood.where(recipe_id: params[:id]).each do |recipe_food| %>
-					<tr>
-					<td>
+					<tr  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+					<td  scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
 						<%= recipe_food.foods.name %>
 					</td>
-					<td>
-						<%= recipe_food.foods.measurement_unit %>
-					</td>
-						<td>
+					<td  scope="row">
 								<%= recipe_food.foods.quantity %>
 						</td>
-							<td>
+					<td  scope="row">
+						<%= recipe_food.foods.measurement_unit %>
+					</td>
+						
+							<td scope="row">
 								$<%= recipe_food.foods.price %>
 						</td>
 						<% if !current_user.nil? && current_user.id == @recipe.user_id %>
-							<td>
+							<td scope="row">
 								<%= button_to "Delete", recipe_recipe_food_path(@recipe.id, recipe_food.id) , method: :delete%>
 							</td>
 						<% end %>
