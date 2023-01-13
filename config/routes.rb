@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   
   root to: 'foods#index'
   
-  # Creating the routes for the foods controller.
   resources :foods, only: [:index, :new, :create, :destroy] do
   end
 
-  # Creating the routes for the recipes controller.
   resources :recipes, only: [:index, :show, :new, :create, :destroy] do
+    resources :recipe_foods, only: [:index, :new, :create, :destroy]
   end
+
+  resources :public_recipes, only: [:index]
+  resources :general_shopping_list, only: [:show]
 end
