@@ -1,0 +1,26 @@
+<div class="flex flex-col justify-around items-center text-sm m-8">
+<h1  class="text-center text-2xl font-bold mb-8">Public Recipes</h1>
+<div class="mt-8">
+<ul>
+<% @public_recipes.each do |recipe| %>
+<li class="w-[40rem] shadow-lg">
+<div class="flex flex-row p-4">
+<div class="w-1/2">
+        <h4 class="text-2xl"><%= recipe.name %></h4>
+        <a class="text-sm text-indigo-600 hover:text-indigo-500" href="/recipes/<%= recipe.id %>">
+                View
+              </a>
+              </div>
+
+              <div class="w-1/2 items-end justify-end content-center text-sm">
+        <p>
+          <%= recipe.description %>
+        </p>
+        </div>
+        </div>
+
+      </li>
+<% end %>
+</ul>
+</div>
+</div>

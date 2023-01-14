@@ -1,0 +1,36 @@
+<h1>New recipe</h1>
+
+<%= form_with model: @recipe, url: recipes_path do |form| %>
+    <div>
+      <%= form.label :name, 'Recipe Name: ', class: 'label' %>
+      <%= form.text_field :name, class: 'field' %>
+    </div>
+    <div>
+      <%= form.label :description, 'Recipe Description:', class: 'label' %>
+      <%= form.text_area :description, class: 'field' %>
+    </div>
+    <div>
+      <%= form.label :preparation_time, 'Preparation Time:', class: 'label' %>
+      <%= form.text_field :preparation_time, class: 'field' %>
+    </div>
+    <div>
+      <%= form.label :cooking_time, 'Cooking Time:', class: 'label' %>
+      <%= form.text_field :cooking_time, class: 'field' %>
+    </div>
+    <div>
+      <div>
+        <%= form.label :public, 'Public: ' %>
+        <%= form.radio_button :public, true %>
+      </div>
+      <div>
+        <%= form.label :public, 'Private: ' %>
+        <%= form.radio_button :public, false %>
+      </div>
+    </div>
+    
+    <%= form.submit 'Submit' %>
+  <% end %>
+
+<div>
+  <%= link_to "Back to recipes", recipes_path %>
+</div>

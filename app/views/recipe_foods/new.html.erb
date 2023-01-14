@@ -1,0 +1,16 @@
+<h1>New Ingredient</h1>
+<div>
+<%= form_with model: @recipe_food, url: recipe_recipe_foods_path, method: :post, scope: :recipe_food do |form| %>
+	<div>
+  <%= form.label :quantity  %>
+  <%= form.number_field :quantity %>
+  </div>
+            <div>
+            <%= form.label :food_id %>
+  <%= form.select(:food_id, Food.all.map{|u| [u.name, u.id]},{ include_blank: true}) %></div>
+  <div>
+    <%= form.submit "Add Ingredient"%>
+    <%= link_to "Back to recipes", recipes_path%>
+  </div>
+<%end%>
+</div>

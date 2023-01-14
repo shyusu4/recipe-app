@@ -1,0 +1,29 @@
+<h1>New food</h1>
+
+<div>
+   <%= form_with model: @food  do |form| %>
+    <div>
+     <%= form.text_field :name, placeholder:"Enter Name:"%>
+   </div>
+
+    <div>
+        <%= form.select :measurement_unit, [["Grams"], ["Kilograms"], ["Liters"], ["Milliliters"]]%>
+     </div>
+
+     <div>
+     <%= form.text_area :price, placeholder:"Enter Price:"%>
+     </div>
+
+      <div>
+        <%= form.number_field :quantity, placeholder:"Enter Quantity:"%>
+      </div>
+
+      <div>
+        <%= form.submit "Create food"%>
+      </div>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "Back to foods", foods_path %>
+</div>

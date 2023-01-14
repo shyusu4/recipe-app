@@ -1,0 +1,28 @@
+
+<h2>General Shopping List </h2>
+
+  <div>
+    <h3>Amount of food items to buy: <%= @total_foods %></h3>
+    <h3>Total value of food needed: $<%= @total_price %></h3>
+  </div>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @ingredients_to_buy.each do |item|%>
+      <tr>
+        <td><%= item.name%></th>
+        <td><%= "#{item.quantity} #{item.measurement_unit}" %></td>
+        <td>$<%= item.price %></td>
+      </tr>
+
+      </tbody>
+      </div>
+    <%end%>
+  </table>
