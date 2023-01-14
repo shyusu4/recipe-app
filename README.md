@@ -76,6 +76,6 @@ I would like to thank Microverse for the project guidelines.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT]() licensed.
+This project is [MIT](https://github.com/shyusu4/Recipe-App/blob/dev/MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
