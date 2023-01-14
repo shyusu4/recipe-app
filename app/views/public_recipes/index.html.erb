@@ -1,16 +1,26 @@
+<div class="flex flex-col justify-around items-center text-sm m-8">
 <h1  class="text-center text-2xl font-bold mb-8">Public Recipes</h1>
+<div class="mt-8">
+<ul>
 <% @public_recipes.each do |recipe| %>
-<div  class="grid place-items-center">
-<div class="flex flex-col mb-4 items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-        <div class="flex flex-col">
-        <h4  class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white"><%= recipe.name %></h4>
-        <a class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700" href="/recipes/<%= recipe.id %>">
+<li class="w-[40rem] shadow-lg">
+<div class="flex flex-row p-4">
+<div class="w-1/2">
+        <h4 class="text-2xl"><%= recipe.name %></h4>
+        <a class="text-sm text-indigo-600 hover:text-indigo-500" href="/recipes/<%= recipe.id %>">
                 View
               </a>
-      </div>
+              </div>
+
+              <div class="w-1/2 items-end justify-end content-center text-sm">
         <p>
           <%= recipe.description %>
         </p>
-      </div>
-      </div>
+        </div>
+        </div>
+
+      </li>
 <% end %>
+</ul>
+</div>
+</div>
