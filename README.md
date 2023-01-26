@@ -1,80 +1,89 @@
-# 📗 Table of Contents
+<a name="readme-top"></a>
+# Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
+- [About the Project](#about-project)
+  - [Built With](#built-with)
+  - [Live Demo](#live-demo)
+- [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
+  - [Install](#install)
   - [Usage](#usage)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+- [Authors](#authors)
+- [Future Features](#future-features)
+- [Contributing](#contributing)
+- [Show your support](#support)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
 
-# 📖 Recipe App <a name="about-project"></a>
+# Recipe App <a name="about-project"></a>
 
-> A RoR blog web application that allows users to create recipes, ingredients and shopping lists. The application provides a platform for sharing recipes with other users by setting recipe to public.
+> A Ruby on Rails web application that allows users to create recipes, ingredients and shopping lists. The application provides a platform for sharing recipes with other users by setting recipe to public.
 
-## 🛠 Built With <a name="built-with"></a>
+## Built With <a name="built-with"></a>
 
 - Ruby on Rails
 
-## 🚀 Live Demo <a name="live-demo"></a>
+## Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link]()
 
-## 💻 Getting Started <a name="getting-started"></a>
+## Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
 
-### Prerequisites
+### Prerequisites <a name="prerequisites"></a>
 
-In order to run this project you need to:
+Make sure you have `Git` and `Ruby` installed
+```
+ gem install rails
+```
+### Install <a name="install"></a>
 
-- Install Ruby on Rails
+Install the project using this command:
 
-### Setup
+```
+  bundle install
+```
+### Usage <a name="usage"></a>
 
-Clone this repository to your desired folder:
+Run project using this command:
 
-`git clone git@github.com:shyusu4/Recipe-App.git`
+```
+rails s
+```
 
-### Usage
+Run tests using this command:
+```
+rspec spec
+```
 
-To run the project, execute the following command:
+## Author <a name="authors"></a>
 
-`rails s`
-
-## 👥 Authors <a name="authors"></a>
-
-👤 Shakhrizoda Yusupova
+Shakhrizoda Yusupova
 
 - GitHub: [@shyusu4](https://github.com/shyusu4)
 - Twitter: [@shyusu4](https://twitter.com/shyusu4)
 - LinkedIn: [Shakhrizoda Yusupova](https://www.linkedin.com/in/shyusu4/)
 
-## 🔭 Future Features <a name="future-features"></a>
+## Future Features <a name="future-features"></a>
 
-- [ ] **UI**
+- [ ] **Updating UI**
 
-## 🤝 Contributing <a name="contributing"></a>
+## Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page.](https://github.com/shyusu4/Recipe-App/issues)
 
-## ⭐️ Show your support <a name="support"></a>
+## Show your support <a name="support"></a>
 
-Give a star if you like this project!
+Give a ⭐️ if you like this project!
 
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
+## Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for the project guidelines.
+- [Microverse](https://microverse.org)
 
-## 📝 License <a name="license"></a>
+## License <a name="license"></a>
 
 This project is [MIT](https://github.com/shyusu4/Recipe-App/blob/dev/MIT.md) licensed.
 
